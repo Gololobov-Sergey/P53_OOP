@@ -3,20 +3,48 @@
 
 #include"Student.h"
 #include"Array.h"
+#include"Time.h"
+#include"Reservoir.h"
 
 using namespace std;
+
+void printArray(const Array& a)
+{
+	a.show();
+}
 
 
 int main() 
 {
+	// 18.09.2026
+
+
+	Reservoir r(ReservoirType::Lake);
+
+	if (ReservoirType::Lake == r.getType())
+	{
+		cout << "Reservoir is a lake." << endl;
+	}
+	else
+	{
+		cout << "Reservoir is not a lake." << endl;
+	}
+
+	Time t(1, 1);
+
+	Array* arr = new Array(5);
+	arr->setRandom();
 
 	// 14.09.2026
 
+	Student s1(1, "Vasya", 30);
 	Array a(10);
-	a.setRandom();
+	a.setRandom(); // setRandom(a)
 	a.show();
 
-	Array b;
+	printArray(a);
+
+	//Array b;
 
 	//Area::romb()
 

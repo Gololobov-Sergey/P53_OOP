@@ -12,13 +12,13 @@ public:
 
 	Array();
 
-	Array(int s);
+	explicit Array(int s);
 
 	~Array();
 
-	void setRandom();
+	void setRandom() const;
 
-	void show();
+	void show() const;
 
 	void add(int value);
 
@@ -26,9 +26,9 @@ public:
 
 	void insert(int index, int value);
 
-	void sort();
+	void sort() const;
 
-	void reverse();
+	void reverse() const;
 
 	void clear();
 
@@ -48,7 +48,7 @@ Array::Array() : arr(nullptr), size(0)
 Array::Array(int s)
 {
 	size = s;
-	arr = new int[size] {0};
+	arr = new int[size];
 }
 
 Array::~Array()
@@ -56,7 +56,7 @@ Array::~Array()
 	delete[] arr;
 }
 
-void Array::setRandom()
+void Array::setRandom() const
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -64,7 +64,7 @@ void Array::setRandom()
 	}
 }
 
-void Array::show()
+void Array::show() const
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -88,12 +88,12 @@ void Array::insert(int index, int value)
 
 }
 
-void Array::sort()
+void Array::sort() const
 {
 
 }
 
-void Array::reverse()
+void Array::reverse() const
 {
 
 }

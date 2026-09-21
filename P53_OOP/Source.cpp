@@ -8,41 +8,63 @@
 
 using namespace std;
 
-void printArray(const Array& a)
+void printArray(Array a)
 {
 	a.show();
 }
 
-
 int main() 
 {
+	// 21.09.2026
+
+
+	Array a(10);
+	a.setRand();
+	a.show();
+	Array b(15);
+	b.setRand();
+	b = b;
+	b.show();
+
+
+	//printArray(a);
+	a.show();
+
+	//Array b(a);
+	//Array c = a;
+
+
+
 	// 18.09.2026
 
 
-	Reservoir r(ReservoirType::Lake);
+	//Reservoir r(ReservoirType::Lake);
 
-	if (ReservoirType::Lake == r.getType())
-	{
-		cout << "Reservoir is a lake." << endl;
-	}
-	else
-	{
-		cout << "Reservoir is not a lake." << endl;
-	}
+	//if (ReservoirType::Lake == r.getType())
+	//{
+	//	cout << "Reservoir is a lake." << endl;
+	//}
+	//else
+	//{
+	//	cout << "Reservoir is not a lake." << endl;
+	//}
 
-	Time t(1, 1);
+	//Time t(1, 1);
 
-	Array* arr = new Array(5);
-	arr->setRandom();
+	//const Array* arr = new Array(5);
+	//arr->setRandom();
 
-	// 14.09.2026
+	//// 14.09.2026
 
-	Student s1(1, "Vasya", 30);
-	Array a(10);
-	a.setRandom(); // setRandom(a)
-	a.show();
+	//Student s1(1, "Vasya", 30);
+	//Array a(10);
+	//a.setRandom(); // setRandom(a)
+	//a.show();
 
-	printArray(a);
+	//printArray(a);
+
+	//Array b = 10;
+
 
 	//Array b;
 

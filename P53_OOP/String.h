@@ -11,9 +11,21 @@ class String
 public:
 	String(const char* str)
 	{
-		int len = strlen(str);
-		this->str = new char[len + 1];
+		size = strlen(str);
+		this->str = new char[size + 1];
 		strcpy(this->str, str);
+	}
+
+	String(const String& obj)
+	{
+		size = obj.size;
+		str = new char[size + 1];
+		strcpy(str, obj.str);
+	}
+
+	~String()
+	{
+		delete[] str;
 	}
 
 	String reSize()

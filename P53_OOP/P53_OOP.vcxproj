@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="Fraction.h" />
     <ClInclude Include="Reservoir.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Time.h" />

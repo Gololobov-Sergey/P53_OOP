@@ -5,6 +5,7 @@
 #include"Array.h"
 #include"Time.h"
 #include"Reservoir.h"
+#include"Fraction.h"
 
 using namespace std;
 
@@ -15,23 +16,78 @@ void printArray(Array a)
 
 int main() 
 {
+
+	// 25.09.2026
+
+	// + - ++ --
+	// + - * / += -= *= /= % %=
+
+	// !
+	// > < >= <= == != && ||
+
+	//() [] << >>
+	
+
+
+	Fraction f1(3, 5);
+	f1.show();
+	Fraction f2(0, 3);
+	f2.show();
+
+	if (f1 && f2)
+	{
+		cout << "<<<<" << endl;
+	}
+	else
+	{
+		cout << ">>>>" << endl;
+	}
+
+	f2(2, 5);
+
+
+	cout << f1["num"] << endl;
+	cout << f1 << endl;
+
+	cin >> f2;
+	cout << f2 << endl;
+
+
+	//Fraction f4 = f1 + f2;
+	//f4.show();
+
+	//Fraction f3 = -f1;
+	//f3.show();
+
+	//(f2++).show();
+	////(++f2).show();
+	//f2.show();
+
+	//f1 = f2 + 5;
+	//f1 = 5 + f2;
+
 	// 21.09.2026
 
 
 	Array a(10);
 	a.setRand();
-	a.show();
-	Array b(15);
-	b.setRand();
-	b = b;
-	b.show();
+	cout << a[-10] << endl;
+	int m = a[-3];
+
+
+	//a.show();
+	//Array b(15);
+	//b.setRand();
+	//b = b;
+	//b.show();
 
 
 	//printArray(a);
-	a.show();
+	//a.show();
 
 	//Array b(a);
-	//Array c = a;
+	//Array c;
+	//c = a;
 
 
 

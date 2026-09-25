@@ -61,6 +61,8 @@ public:
 	double getAverage() const;
 
 	bool contains(int value) const;
+
+	int& operator[](int index);
 };
 
 Array::Array() : arr(nullptr), size(0) {}
@@ -357,4 +359,9 @@ bool Array::contains(int value) const
 		}
 	}
 	return false;
+}
+
+int& Array::operator[](int index)
+{
+	return arr[index];
 }

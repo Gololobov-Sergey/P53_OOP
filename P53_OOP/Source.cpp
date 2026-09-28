@@ -9,13 +9,32 @@
 
 using namespace std;
 
-void printArray(Array a)
+template<class T>
+void printArray(Array<T> a)
 {
 	a.show();
 }
 
 int main() 
 {
+	// 28.09.2026
+
+	Array<int> arr(10);
+	arr.setRand();
+	arr.show();
+	cout << arr[-2] << endl;
+
+	Array<Fraction> f(10);
+	f.setRand();
+	f.show();
+
+	//Array<Student> s(5);
+	//s.setRand();
+
+
+	//void* p = new int{ 10 };
+	//cout << *((int*)p) << endl;
+
 
 	// 25.09.2026
 
@@ -29,28 +48,28 @@ int main()
 	
 
 
-	Fraction f1(3, 5);
-	f1.show();
-	Fraction f2(0, 3);
-	f2.show();
+	//Fraction f1(3, 5);
+	//f1.show();
+	//Fraction f2(0, 3);
+	//f2.show();
 
-	if (f1 && f2)
-	{
-		cout << "<<<<" << endl;
-	}
-	else
-	{
-		cout << ">>>>" << endl;
-	}
+	//if (f1 && f2)
+	//{
+	//	cout << "<<<<" << endl;
+	//}
+	//else
+	//{
+	//	cout << ">>>>" << endl;
+	//}
 
-	f2(2, 5);
+	//f2(2, 5);
 
 
-	cout << f1["num"] << endl;
-	cout << f1 << endl;
+	//cout << f1["num"] << endl;
+	//cout << f1 << endl;
 
-	cin >> f2;
-	cout << f2 << endl;
+	//cin >> f2;
+	//cout << f2 << endl;
 
 
 	//Fraction f4 = f1 + f2;
@@ -69,10 +88,10 @@ int main()
 	// 21.09.2026
 
 
-	Array a(10);
-	a.setRand();
-	cout << a[-10] << endl;
-	int m = a[-3];
+	//Array a(10);
+	//a.setRand();
+	//cout << a[-10] << endl;
+	//int m = a[-3];
 
 
 	//a.show();

@@ -7,6 +7,9 @@
 #include"Reservoir.h"
 #include"Fraction.h"
 
+#include"Stack.h"
+#include"Calc.h"
+
 using namespace std;
 
 template<class T>
@@ -17,16 +20,38 @@ void printArray(Array<T> a)
 
 int main() 
 {
+
+	// 02.10.2026
+
+	//Stack<int, 5> s;
+	//s.push(10);
+	//s.push(5);
+	//s.push(20);
+	//s.push(15);
+	//s.push(25);
+	//s.push(35);
+	//s.print();
+	//cout << s.peek() << endl;
+	//s.pop();
+	//s.pop();
+	//s.print();
+	//s.clear();
+	//s.print();
+
+	Calc c("4/2");
+	cout << c.getResult() << endl;
+
+
 	// 28.09.2026
 
-	Array<int> arr(10);
-	arr.setRand();
-	arr.show();
-	cout << arr[-2] << endl;
+	//Array<int> arr(10);
+	//arr.setRand();
+	//arr.show();
+	//cout << arr[-2] << endl;
 
-	Array<Fraction> f(10);
-	f.setRand();
-	f.show();
+	//Array<Fraction> f(10);
+	//f.setRand();
+	//f.show();
 
 	//Array<Student> s(5);
 	//s.setRand();

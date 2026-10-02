@@ -143,8 +143,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="Calc.h" />
     <ClInclude Include="Fraction.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Reservoir.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Student.h" />

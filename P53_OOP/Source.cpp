@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
+#include<Windows.h>
 
 #include"Student.h"
 #include"Array.h"
@@ -9,6 +10,9 @@
 
 #include"Stack.h"
 #include"Calc.h"
+#include"Queue.h"
+#include"PriorityQueue.h"
+#include"Bus.h"
 
 using namespace std;
 
@@ -20,6 +24,56 @@ void printArray(Array<T> a)
 
 int main() 
 {
+
+	// 05.10.2026
+
+	//Queue<int> q = { 1, 2, 3 };
+	//q.enqueue(10);
+	//q.ring();
+	//q.print();
+	//cout << q.peek() << endl;
+	//q.clear();
+	//q.print();
+
+	//PriorityQueue<int> pq;
+	//pq.enqueue(10, 1);
+	//pq.enqueue(20, 2);
+	//pq.enqueue(10, 1);
+	//pq.enqueue(30, 3);
+	//pq.enqueue(20, 2);
+	//pq.print();
+
+	//PriorityQueue<Fraction, float> p;
+	//p.enqueue(Fraction(2, 3), (float)Fraction(2, 3));
+	//p.enqueue(Fraction(1, 3), (float)Fraction(1, 3));
+	//p.enqueue(Fraction(3, 3), (float)Fraction(3, 3));
+	//p.enqueue(Fraction(5, 3), (float)Fraction(5, 3));
+	//p.enqueue(Fraction(1, 3), (float)Fraction(1, 3));
+	//p.print();
+
+
+	Queue<Bus> bus = {};
+	Queue<People> p;
+
+	int i = 0;
+	while (true)
+	{
+		if (i % 2 == 0)
+		{
+			cout << "Add pass" << endl;
+			p.enqueue(People());
+		}
+
+		if (i % 10 == 0)
+		{
+			cout << "Bus arrived" << endl;
+
+		}
+		Sleep(1000);
+		i++;
+	}
+
+
 
 	// 02.10.2026
 
@@ -38,8 +92,8 @@ int main()
 	//s.clear();
 	//s.print();
 
-	Calc c("4/2");
-	cout << c.getResult() << endl;
+	//Calc c("4/2");
+	//cout << c.getResult() << endl;
 
 
 	// 28.09.2026

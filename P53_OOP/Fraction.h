@@ -104,6 +104,11 @@ public:
 	friend ostream& operator<<(ostream& out, const Fraction& f);
 
 	friend istream& operator>>(istream& in, Fraction& f);
+
+	operator float()
+	{
+		return (float)numerator / denominator;
+	}
 };
 
 Fraction operator + (int n, Fraction f2)

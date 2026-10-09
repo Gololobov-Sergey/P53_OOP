@@ -13,6 +13,7 @@
 #include"Queue.h"
 #include"PriorityQueue.h"
 #include"Bus.h"
+#include"ForwardList.h"
 
 using namespace std;
 
@@ -22,8 +23,24 @@ void printArray(Array<T> a)
 	a.show();
 }
 
+void addTimePeople(People& p)
+{
+	p.addTime();
+}
+
 int main() 
 {
+
+	// 09.10.2026
+
+	ForwardList<int> l = { 1,21,3 };
+	cout << l[1] << endl;
+
+	ForwardList<int> l2 = l;
+	l2.print();
+
+	ForwardList<int> l3 = l + l2;
+	l3.print();
 
 	// 05.10.2026
 
@@ -52,26 +69,29 @@ int main()
 	//p.print();
 
 
-	Queue<Bus> bus = {};
-	Queue<People> p;
+	//Queue<Bus> bus = {};
+	//Queue<People> p;
 
-	int i = 0;
-	while (true)
-	{
-		if (i % 2 == 0)
-		{
-			cout << "Add pass" << endl;
-			p.enqueue(People());
-		}
+	//int i = 0;
+	//while (true)
+	//{
+	//	if (i % 2 == 0)
+	//	{
+	//		cout << "Add pass" << endl;
+	//		p.enqueue(People());
+	//	}
 
-		if (i % 10 == 0)
-		{
-			cout << "Bus arrived" << endl;
+	//	if (i % 10 == 0)
+	//	{
+	//		cout << "Bus arrived" << endl;
 
-		}
-		Sleep(1000);
-		i++;
-	}
+	//	}
+
+	//	p.for_each(addTimePeople);
+
+	//	Sleep(1000);
+	//	i++;
+	//}
 
 
 

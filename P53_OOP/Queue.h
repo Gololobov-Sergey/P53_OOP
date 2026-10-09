@@ -26,6 +26,8 @@ public:
 	size_t getSize() const;
 
 	void ring();
+
+	void for_each(void(*action)(T&));
 };
 
 template<class T>
@@ -130,4 +132,15 @@ void Queue<T>::ring()
 	first = first->next;
 	last = last->next;
 	last->next = nullptr;
+}
+
+template<class T>
+void Queue<T>::for_each(void(*action)(T&))
+{
+	Node<T>* temp = first;
+	while (temp)
+	{
+		action(temp->value);
+		temp = temp->next;
+	}
 }

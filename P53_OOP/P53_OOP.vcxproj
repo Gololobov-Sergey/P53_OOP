@@ -145,6 +145,7 @@
     <ClInclude Include="Array.h" />
     <ClInclude Include="Bus.h" />
     <ClInclude Include="Calc.h" />
+    <ClInclude Include="ForwardList.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="PriorityQueue.h" />

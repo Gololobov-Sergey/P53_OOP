@@ -14,6 +14,7 @@
 #include"PriorityQueue.h"
 #include"Bus.h"
 #include"ForwardList.h"
+#include"List.h"
 
 using namespace std;
 
@@ -31,16 +32,30 @@ void addTimePeople(People& p)
 int main() 
 {
 
+	// 12.10.2026
+
+
+	List<int> l = { 1,2,3,4,5 };
+	//l.push_back(10);
+	//l.push_front(20);
+	//l.print();
+	//l.insert(99, 0);
+	l.print();
+
+	l.remove(1);
+	l.print();
+
+
 	// 09.10.2026
 
-	ForwardList<int> l = { 1,21,3 };
-	cout << l[1] << endl;
+	//ForwardList<int> l = { 1,21,3 };
+	//cout << l[1] << endl;
 
-	ForwardList<int> l2 = l;
-	l2.print();
+	//ForwardList<int> l2 = l;
+	//l2.print();
 
-	ForwardList<int> l3 = l + l2;
-	l3.print();
+	//ForwardList<int> l3 = l + l2;
+	//l3.print();
 
 	// 05.10.2026
 

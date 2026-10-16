@@ -15,6 +15,7 @@
 #include"Bus.h"
 #include"ForwardList.h"
 #include"List.h"
+#include"BTree.h"
 
 using namespace std;
 
@@ -32,18 +33,33 @@ void addTimePeople(People& p)
 int main() 
 {
 
+	// 16.10.2026
+
+
+	BTree<int, int> b;
+	b.push_r(10, 10);
+	b.push_r(5, 5);
+	b.push_r(15, 15);
+	b.push_r(0, 0);
+	b.push_r(1, 1);
+	cout << b.push_r(2, 2) << endl;
+	cout << b.push_r(1, 1) << endl;
+	cout << b.push_r(3, 3) << endl;
+	b.print();
+	b.clear();
+
 	// 12.10.2026
 
 
-	List<int> l = { 1,2,3,4,5 };
-	//l.push_back(10);
-	//l.push_front(20);
+	//List<int> l = { 1,2,3,4,5 };
+	////l.push_back(10);
+	////l.push_front(20);
+	////l.print();
+	////l.insert(99, 0);
 	//l.print();
-	//l.insert(99, 0);
-	l.print();
 
-	l.remove(1);
-	l.print();
+	//l.remove(1);
+	//l.print();
 
 
 	// 09.10.2026

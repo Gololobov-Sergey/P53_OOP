@@ -147,8 +147,10 @@
     <ClInclude Include="BTree.h" />
     <ClInclude Include="Bus.h" />
     <ClInclude Include="Calc.h" />
+    <ClInclude Include="Composition.h" />
     <ClInclude Include="ForwardList.h" />
     <ClInclude Include="Fraction.h" />
+    <ClInclude Include="Inherit.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="PriorityQueue.h" />

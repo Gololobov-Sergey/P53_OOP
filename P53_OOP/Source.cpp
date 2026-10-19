@@ -16,6 +16,8 @@
 #include"ForwardList.h"
 #include"List.h"
 #include"BTree.h"
+#include"Composition.h"
+#include"Inherit.h"
 
 using namespace std;
 
@@ -33,20 +35,57 @@ void addTimePeople(People& p)
 int main() 
 {
 
+	// 19.10.2026
+
+
+	//Engine* en = new Engine;
+	//{
+	//	Car c(en);
+
+	//	STO sto;
+
+	//	sto.setEngine(c.getEngine());
+	//	sto.upgrade();
+	//}
+
+	//en->start();
+
+
+	//Human h(20);
+
+	Player p("Messi", 40, 980);
+	p.info();
+	p.method();
+	
+
+	//A a;
+	//a.aaa = 10;
+	////a.aa = 10;
+
+	//B b;
+	//b.aaa = 10;
+
+	//C c;
+	
+
+
+
+
+
 	// 16.10.2026
 
 
-	BTree<int, int> b;
-	b.push_r(10, 10);
-	b.push_r(5, 5);
-	b.push_r(15, 15);
-	b.push_r(0, 0);
-	b.push_r(1, 1);
-	cout << b.push_r(2, 2) << endl;
-	cout << b.push_r(1, 1) << endl;
-	cout << b.push_r(3, 3) << endl;
-	b.print();
-	b.clear();
+	//BTree<int, int> b;
+	//b.push_r(10, 10);
+	//b.push_r(5, 5);
+	//b.push_r(15, 15);
+	//b.push_r(0, 0);
+	//b.push_r(1, 1);
+	//cout << b.push_r(2, 2) << endl;
+	//cout << b.push_r(1, 1) << endl;
+	//cout << b.push_r(3, 3) << endl;
+	//b.print();
+	//b.clear();
 
 	// 12.10.2026
 

@@ -18,6 +18,7 @@
 #include"BTree.h"
 #include"Composition.h"
 #include"Inherit.h"
+#include"Animal.h"
 
 using namespace std;
 
@@ -32,8 +33,67 @@ void addTimePeople(People& p)
 	p.addTime();
 }
 
-int main() 
+int main()
 {
+
+	// 23.10.2026
+
+	//Animal* a = new Animal("????", 0);
+	//cout << a->getName() << endl;
+	//cout << a->getType() << endl;
+	//cout << a->getVoice() << endl;
+
+	//cout << endl;
+
+	//Animal* c = new Cat("Tom", 3);
+	//cout << c->getName() << endl;
+	//cout << c->getType() << endl;
+	//cout << c->getVoice() << endl;
+
+	//cout << endl;
+
+	//Animal* d = new Dog("Spike", 5);
+	//cout << d->getName() << endl;
+	//cout << d->getType() << endl;
+	//cout << d->getVoice() << endl;
+
+
+	//Animal* sc = new SiamCat("Barsik", 4);
+
+	//cout << endl;
+	//Animal* aa[] = { /*a,*/ c, d, sc, new Ravlik("Vasya", 1)};
+	//for (size_t i = 0; i < 4; i++)
+	//{
+	//	cout << aa[i]->getName() << endl;
+	//	cout << aa[i]->getType() << endl;
+	//	cout << aa[i]->getVoice() << endl;
+	//	cout << endl;
+	//}
+
+
+	Animal* c = new Cat("Tom2", 3);
+	cout << c->getType() << endl;
+
+	delete c;
+
+	//Animal& a = c;
+	//cout << a.getType() << endl;
+
+	//Animal* aa = &c;
+	//cout << aa->getType() << endl;
+
+	//Router r(123, 456, 789, 999);
+	//cout << r.LANDevice::getID() << endl;
+	//cout << r.WiFiDevice::getID() << endl;
+
+	//r.LANDevice::Device::id = 10;
+	//cout << r.LANDevice::Device::id << endl;
+	//cout << r.WiFiDevice::Device::id << endl;
+
+	//r.WiFiDevice::Device::id = 20;
+	//cout << r.LANDevice::Device::id << endl;
+	//cout << r.WiFiDevice::Device::id << endl;
+
 
 	// 19.10.2026
 
@@ -53,10 +113,10 @@ int main()
 
 	//Human h(20);
 
-	Player p("Messi", 40, 980);
-	p.info();
-	p.method();
-	
+	//Player p("Messi", 40, 980);
+	//p.info();
+	//p.method();
+
 
 	//A a;
 	//a.aaa = 10;
@@ -66,7 +126,7 @@ int main()
 	//b.aaa = 10;
 
 	//C c;
-	
+
 
 
 
@@ -214,7 +274,7 @@ int main()
 	// > < >= <= == != && ||
 
 	//() [] << >>
-	
+
 
 
 	//Fraction f1(3, 5);

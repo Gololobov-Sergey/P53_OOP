@@ -159,3 +159,52 @@ public:
 
 	void method() = delete;
 };
+
+
+class Device
+{
+public:
+	int id;
+
+	Device(int id) : id(id)
+	{
+
+	}
+};
+
+class LANDevice : virtual public Device
+{
+	int id;
+
+public:
+	LANDevice(int id, int id_d): id(id), Device(id_d)
+	{
+
+	}
+
+	int getID() { return id; }
+};
+
+class WiFiDevice : virtual public Device
+{
+	int id;
+
+public:
+	WiFiDevice(int id, int id_d) : id(id), Device(id_d)
+	{
+
+	}
+
+	int getID() { return id; }
+};
+
+class Router : public WiFiDevice, public LANDevice
+{
+	int id;
+
+public:
+	Router(int id, int id_l, int id_w, int id_d) : id(id), WiFiDevice(id_w, id_d), LANDevice(id_l, id_d), Device(id_d)
+	{
+
+	}
+};

@@ -27,7 +27,7 @@ string Animal::getVoice()
 }
 
 
-class Cat : public Animal
+class Cat /*final*/: public Animal
 {
 public:
 	Cat(string n, int a) : Animal(n, a) {}
@@ -36,7 +36,7 @@ public:
 
 	virtual string getType() override { return "Cat"; }
 
-	virtual string getVoice() override { return "Mau Mau"; }
+	virtual string getVoice() /*final*/ override { return "Mau Mau"; }
 };
 
 

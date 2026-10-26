@@ -19,6 +19,7 @@
 #include"Composition.h"
 #include"Inherit.h"
 #include"Animal.h"
+#include"WarOfWorld.h"
 
 using namespace std;
 
@@ -35,6 +36,12 @@ void addTimePeople(People& p)
 
 int main()
 {
+
+	// 26.10.2026
+
+	WarOfWord war(5);
+	war.game();
+
 
 	// 23.10.2026
 
@@ -71,10 +78,10 @@ int main()
 	//}
 
 
-	Animal* c = new Cat("Tom2", 3);
-	cout << c->getType() << endl;
+	//Animal* c = new Cat("Tom2", 3);
+	//cout << c->getType() << endl;
 
-	delete c;
+	//delete c;
 
 	//Animal& a = c;
 	//cout << a.getType() << endl;

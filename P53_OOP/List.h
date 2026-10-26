@@ -2,6 +2,7 @@
 #include<initializer_list>
 
 #include"Node.h"
+#include"func.h"
 
 using namespace std;
 
@@ -40,6 +41,7 @@ public:
 
 	size_t getSize() const;
 	void print() const;
+	void print(int x, int y) const;
 	void clear();
 
 	size_t firstIndex(const T& value);
@@ -218,12 +220,37 @@ void List<T>::remove(size_t index)
 }
 
 template<class T>
+T& List<T>::operator[](size_t index) const
+{
+	return getNode(index)->value;
+}
+
+template<class T>
+inline size_t List<T>::getSize() const
+{
+	return size;
+}
+
+template<class T>
 void List<T>::print() const
 {
 	Node<T>* temp = first;
 	while (temp)
 	{
-		cout << temp->value << " ";
+		cout << temp->value;
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+template<class T>
+void List<T>::print(int x, int y) const
+{
+	Node<T>* temp = first;
+	while (temp)
+	{
+		SetCursor(x, y++);
+		cout << temp->value;
 		temp = temp->next;
 	}
 	cout << endl;

@@ -151,11 +151,13 @@ public:
 		//cout << "Dest Player \n";
 	}
 
-	void info()
-	{
-		Human::info();
-		cout << "Goal : " << goal << endl;
-	}
+	//void info()
+	//{
+	//	Human::info();
+	//	cout << "Goal : " << goal << endl;
+	//}
+
+	void info(int a){}
 
 	void method() = delete;
 };

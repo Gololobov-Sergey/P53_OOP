@@ -6,6 +6,7 @@
 template<class T>
 class Queue
 {
+protected:
 	Node<T>* first;
 	Node<T>* last;
 	size_t   size;
@@ -15,7 +16,7 @@ public:
 	Queue(initializer_list<T> list);
 	Queue(const Queue& obj);
 	Queue& operator= (const Queue& obj);
-	~Queue();
+	virtual ~Queue();
 
 	void   enqueue(const T& value);
 	void   dequeue();
@@ -143,4 +144,49 @@ void Queue<T>::for_each(void(*action)(T&))
 		action(temp->value);
 		temp = temp->next;
 	}
+}
+
+
+template<class T, class TPri = T>
+class PriorityQueue : public Queue<T>
+{
+
+public:
+
+	void   enqueue(const T& value, TPri pri);
+};
+
+template<class T, class TPri>
+void PriorityQueue<T, TPri>::enqueue(const T& value, TPri pri)
+{
+	Node<T, TPri>* newNode = new Node<T, TPri>(value, pri);
+
+	if (this->size == 0)
+	{
+		this->first = this->last = newNode;
+		this->size++;
+		return;
+	}
+
+	if (pri > this->first->priority)
+	{
+		newNode->next = this->first;
+		this->first = newNode;
+	}
+	else if (pri <= this->last->priority)
+	{
+		this->last->next = newNode;
+		this->last = newNode;
+	}
+	else
+	{
+		Node<T, TPri>* pos = this->first;
+		while (pri <= pos->next->priority)
+		{
+			pos = pos->next;
+		}
+		newNode->next = pos->next;
+		pos->next = newNode;
+	}
+	this->size++;
 }

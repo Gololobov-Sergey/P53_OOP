@@ -1,0 +1,1 @@
+Oct 30 2026 | 20:10:04 | C:\Users\gololobov\source\repos\P53_OOP\P53_OOP\Source.cpp | 55 | Div by zero

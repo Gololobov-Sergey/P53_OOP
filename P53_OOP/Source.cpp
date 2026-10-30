@@ -20,6 +20,7 @@
 #include"Inherit.h"
 #include"Animal.h"
 #include"WarOfWorld.h"
+#include"MyException.h"
 
 using namespace std;
 
@@ -29,18 +30,109 @@ void printArray(Array<T> a)
 	a.show();
 }
 
-void addTimePeople(People& p)
+void addTimePeople(People& p) noexcept
 {
 	p.addTime();
+}
+
+float div_(int a, int b)
+{
+	if (b == 0)
+		throw new invalid_argument("b = 0");
+	return a / b;
 }
 
 int main()
 {
 
+
+	// 30.10.2026
+
+
+	//throw 1;
+	//throw "Error";
+	//throw Time();
+
+
+	try
+	{
+		int a, b;
+		cin >> a >> b;
+		////if (b == 0)
+		//	//throw MyException(__DATE__, __TIME__, __FILE__, __LINE__, "Div by zero");
+		//	//throw new invalid_argument("b = 0");
+
+		////if (b == 1)
+		////	throw 100;
+
+		//cout << a / b << endl;
+
+		cout << div_(a, b) << endl;
+	}
+	catch (exception* ex)
+	{
+		cout << ex->what() << endl;
+	}
+	catch (invalid_argument* ex)
+	{
+		cout << ex->what() << endl;
+	}
+
+	catch (MyException& ex)
+	{
+		ex.getConsoleError();
+		ex.saveToFile();
+	}
+	catch (const char* err)
+	{
+		cout << err << endl;
+	}
+	catch (int a)
+	{
+		cout << "Int " << a << endl;
+	}
+	
+
+
+	//List<Light*> l = { new Swordsman(10,10) };
+	//List<Warrior*> l1;
+	//for (size_t i = 0; i < l.getSize(); i++)
+	//{
+	//	l1.push_back(l[i]);
+	//}
+	//l1.print();
+	//l.print();
+
+
+	//PriorityQueue<int, int> p;
+	//p.enqueue(10, 10);
+	//p.enqueue(20, 20);
+	//p.enqueue(50, 50);
+	//p.dequeue();
+	//p.print();
+
+
+
+	//Animal* cat = new Cat("Tom", 3);
+
+	//Cat* c = dynamic_cast<Cat*>(cat);
+	//if (c)
+	//{
+	//	c->cathMouse();
+	//	c->cathMouse();
+	//	c->cathMouse();
+	//	cout << c->getMouse() << endl;
+	//}
+	//else
+	//{
+	//	cout << "Not Cat" << endl;
+	//}
+
+
 	// 26.10.2026
 
-	WarOfWord war(5);
-	war.game();
+	//WarOfWord war(5);
+	//war.game();
 
 
 	// 23.10.2026

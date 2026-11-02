@@ -21,6 +21,7 @@
 #include"Animal.h"
 #include"WarOfWorld.h"
 #include"MyException.h"
+#include"SmartPointer.h"
 
 using namespace std;
 
@@ -42,8 +43,82 @@ float div_(int a, int b)
 	return a / b;
 }
 
+
+void PrintAnimal(IPrinable* a)
+{
+	a->print();
+}
+
+Cat fff()
+{
+	
+	return Cat("Tom", 3);
+}
+
+void superFunc()
+{
+	SmartPointer<Cat> c(new Cat("Tom", 3));
+	
+	SmartPointer<Cat>c1 = move(c);
+
+
+
+	int a;
+	cin >> a;
+	if (a == 0)
+		throw new invalid_argument("a = 0");
+
+
+	//delete c;
+}
+
 int main()
 {
+	// 02.11.2026
+
+	
+	//int a = 10;
+	//int&& b = 10;
+
+
+	//superFunc();
+
+
+	//SmartPointer<Cat> c(new Cat("Tom", 3));
+	//c->print();
+
+	//SmartPointer<Cat>c1 = move(c);
+	//c1->print();
+	//c->print();
+
+	unique_ptr<Cat> c = make_unique<Cat>("Tom", 5);
+	unique_ptr<Cat> c1;
+	cout << c << endl;
+	cout << c1 << endl;
+
+	c1 = move(c);
+
+
+	cout << c << endl;
+	cout << c1 << endl;
+
+
+	shared_ptr<Cat> k1 = make_shared<Cat>("Tom", 5);
+
+
+	int a = 8;
+	int b = 9;
+	swap(a, b);
+
+
+	//List<Cat>l;
+	//Cat c = Cat("Tom", 3);
+	//l.push_back(Cat("Tom", 3));
+	//l.push_back(c);
+
+
+	//IPrinable* a = new SiamCat("Barsik", 4);
+	//PrintAnimal(a);
 
 
 	// 30.10.2026
@@ -54,43 +129,43 @@ int main()
 	//throw Time();
 
 
-	try
-	{
-		int a, b;
-		cin >> a >> b;
-		////if (b == 0)
-		//	//throw MyException(__DATE__, __TIME__, __FILE__, __LINE__, "Div by zero");
-		//	//throw new invalid_argument("b = 0");
+	//try
+	//{
+	//	int a, b;
+	//	cin >> a >> b;
+	//	////if (b == 0)
+	//	//	//throw MyException(__DATE__, __TIME__, __FILE__, __LINE__, "Div by zero");
+	//	//	//throw new invalid_argument("b = 0");
 
-		////if (b == 1)
-		////	throw 100;
+	//	////if (b == 1)
+	//	////	throw 100;
 
-		//cout << a / b << endl;
+	//	//cout << a / b << endl;
 
-		cout << div_(a, b) << endl;
-	}
-	catch (exception* ex)
-	{
-		cout << ex->what() << endl;
-	}
-	catch (invalid_argument* ex)
-	{
-		cout << ex->what() << endl;
-	}
+	//	cout << div_(a, b) << endl;
+	//}
+	//catch (exception* ex)
+	//{
+	//	cout << ex->what() << endl;
+	//}
+	//catch (invalid_argument* ex)
+	//{
+	//	cout << ex->what() << endl;
+	//}
 
-	catch (MyException& ex)
-	{
-		ex.getConsoleError();
-		ex.saveToFile();
-	}
-	catch (const char* err)
-	{
-		cout << err << endl;
-	}
-	catch (int a)
-	{
-		cout << "Int " << a << endl;
-	}
+	//catch (MyException& ex)
+	//{
+	//	ex.getConsoleError();
+	//	ex.saveToFile();
+	//}
+	//catch (const char* err)
+	//{
+	//	cout << err << endl;
+	//}
+	//catch (int a)
+	//{
+	//	cout << "Int " << a << endl;
+	//}
 	
 
 

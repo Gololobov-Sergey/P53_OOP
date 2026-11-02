@@ -25,7 +25,8 @@ public:
 	~List();
 
 	void push_front(const T& value);
-	void push_back(const T& value);
+	void push_back( T& value);
+	//void push_back( T&& value);
 	void insert(const T& value, size_t index);
 
 	void pop_front();
@@ -115,7 +116,15 @@ void List<T>::push_front(const T& value)
 	}
 	else
 	{
-		Node<T>* newNode = new Node<T>(value);
+		Node<T>* newNode = nullptr;
+		try 
+		{
+			newNode = new Node<T>(value);
+		}
+		catch (bad_alloc& ex)
+		{
+			throw;
+		}
 		newNode->next = first;
 		first->prev = newNode;
 		first = newNode;
@@ -124,7 +133,7 @@ void List<T>::push_front(const T& value)
 }
 
 template<class T>
-void List<T>::push_back(const T& value)
+void List<T>::push_back( T& value)
 {
 	if (size == 0)
 	{

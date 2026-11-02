@@ -163,6 +163,7 @@
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Reservoir.h" />
     <ClInclude Include="Settings.h" />
+    <ClInclude Include="SmartPointer.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Time.h" />

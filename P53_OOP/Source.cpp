@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<Windows.h>
+#include<vector>
 
 #include"Student.h"
 #include"Array.h"
@@ -72,8 +73,68 @@ void superFunc()
 	//delete c;
 }
 
+template<class Cont>
+void print(Cont& cont)
+{
+	for (auto elem : cont)
+	{
+		cout << elem << " ";
+	}
+	cout << endl;
+}
+
+//bool isEven(int a)
+//{
+//	return a % 2 == 0;
+//}
+
+
 int main()
 {
+	// 04.11.2026
+
+	vector<int> v = { 1,2,3,4,5,6 };
+	vector<int> v1 = { 12,23,34,45,56,67 };
+	print(v);
+
+	//v.insert(v.begin() + 3, 99);
+	//v.insert(v.begin() + 3, v1.begin()+2, v1.begin()+5);
+	v.insert(v.begin() + 3, {6,7,8,9,});
+	print(v);
+
+	//vector<Cat> vc = { Cat("Tom", 3), Cat("Murka", 2) };
+	//vc.insert(vc.begin() + 1, Cat("Barsik", 4));
+	//vc.emplace(vc.begin() + 1, "Barsik", 4);
+
+	erase_if(v, [](int a) { return a % 2 == 0; });
+	print(v);
+
+	[]() {};
+
+	auto f = [](const char* message) { cout << message << endl; };
+	f("mama");
+
+	auto ff = [](int a)->int {
+		if (a == 0)
+			return 10;
+		return 5.0;	};
+
+	cout << ff(40) << endl;
+
+
+	int c = 10, m = 12;
+	auto fff = [=, &c]() { cout << ++c << m << endl; };
+	fff();
+
+	//cout << v.size() << endl;
+	//cout << v.capacity() << endl;
+	//cout << v.max_size() << endl;
+
+	//auto it = v.begin() + 2;
+	//cout << *(it) << endl;
+
+
+
 	// 02.11.2026
 
 	
@@ -91,24 +152,27 @@ int main()
 	//c1->print();
 	//c->print();
 
-	unique_ptr<Cat> c = make_unique<Cat>("Tom", 5);
-	unique_ptr<Cat> c1;
-	cout << c << endl;
-	cout << c1 << endl;
+	//unique_ptr<Cat> c = make_unique<Cat>("Tom", 5);
+	//unique_ptr<Cat> c1;
+	//cout << c << endl;
+	//cout << c1 << endl;
 
-	c1 = move(c);
-
-
-	cout << c << endl;
-	cout << c1 << endl;
+	//c1 = move(c);
 
 
-	shared_ptr<Cat> k1 = make_shared<Cat>("Tom", 5);
+	//cout << c << endl;
+	//cout << c1 << endl;
 
 
-	int a = 8;
-	int b = 9;
-	swap(a, b);
+	//shared_ptr<Cat> k1 = make_shared<Cat>("Tom", 5);
+	//shared_ptr<Cat> k2(k1);
+	//shared_ptr<Cat> k3 = k2;
+	//shared_ptr<Cat> k4;
+	//k4 = k3;
+
+	//int a = 8;
+	//int b = 9;
+	//swap(a, b);
 
 
 	//List<Cat>l;

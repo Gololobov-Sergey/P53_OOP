@@ -20,13 +20,15 @@ class Animal
 public: 
 	Animal(string n, int a) : name(n), age(a) {}
 
-	virtual ~Animal() { cout << "Destr Animal" << endl; }
+	virtual ~Animal() { /*cout << "Destr Animal" << endl;*/ }
 
-	string getName() { return name; }
+	string getName() { return name; } const 
 
-	virtual string getType() { return "Animal"; }
+	virtual string getType() { return "Animal"; } 
 
 	virtual string getVoice() = 0;
+
+	int getAge() { return age; }
 };
 
 string Animal::getVoice()
@@ -42,17 +44,23 @@ class Cat /*final*/ : public Animal, public IPrinable
 public:
 	Cat(string n, int a) : Animal(n, a) {}
 
-	~Cat() { cout << "Destr Cat" << endl; }
+	~Cat() { /*cout << "Destr Cat" << endl;*/ }
 
-	virtual string getType() override { return "Cat"; }
+	virtual string getType()  override { return "Cat"; }
 
-	virtual string getVoice() /*final*/ override { return "Mau Mau"; }
+	virtual string getVoice() const /*final*/ override { return "Mau Mau"; }
 
 	virtual void print() override { cout << "Cat: " << getName() << endl; }
 
 	void cathMouse() { mouse++; }
 
 	int getMouse() { return mouse; }
+
+	friend ostream& operator<<(ostream& os, Cat& c)
+	{
+		os << "Cat: " << c.getName() << ", Age: " << c.getAge();
+		return os;
+	}
 };
 
 

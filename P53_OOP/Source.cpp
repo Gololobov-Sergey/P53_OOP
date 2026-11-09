@@ -2,6 +2,11 @@
 #include<iostream>
 #include<Windows.h>
 #include<vector>
+#include<array>
+#include<list>
+#include<stack>
+#include<set>
+#include<map>
 
 #include"Student.h"
 #include"Array.h"
@@ -23,6 +28,7 @@
 #include"WarOfWorld.h"
 #include"MyException.h"
 #include"SmartPointer.h"
+#include"md5.h"
 
 using namespace std;
 
@@ -78,7 +84,7 @@ void print(Cont& cont)
 {
 	for (auto elem : cont)
 	{
-		cout << elem << " ";
+		cout << elem << endl;
 	}
 	cout << endl;
 }
@@ -88,43 +94,129 @@ void print(Cont& cont)
 //	return a % 2 == 0;
 //}
 
+class MyStack : public stack<int>
+{
+public:
+	MyStack(initializer_list<int> l)
+	{
+		for (auto elem : l)
+		{
+			push(elem);
+		}
+	}
+
+	void show()
+	{
+		auto it = this->c.begin(); 	//c - protected member of stack
+		while (it != this->c.end())
+		{
+			cout << *it << endl;
+			it++;
+		}
+	}
+};
+
+class FromCatName
+{
+public:
+	bool operator()(const Cat& c1, const Cat& c2) const
+	{
+		return c1.getName() < c2.getName();
+	}
+};
+
 
 int main()
 {
+
+	// 09.11.2026
+
+
+	map<string, Cat, FromCatName> cats;
+	cats.insert(make_pair("Tom", Cat("Tom", 3)));
+	cats.insert(make_pair("Bob", Cat("Tom", 3)));
+	cats.insert(make_pair("Alice", Cat("Tom", 3)));
+	for (auto elem : cats)
+	{
+		cout << elem.first << endl;
+	}
+
+
+
+	//set<int> s = { 1, 2, 3, 4, 3, 6, 5, 6, 7 };
+	//auto p = s.insert(16);
+	//cout << *p.first << " " << p.second << endl;
+	//print(s);
+
+	//cout << s.insert(16).second << endl;
+
+	//list<Cat> cats = { Cat("Tom", 3), Cat("Bob", 5), Cat("Alice", 2) };
+	//print(cats);
+	////cats.sort([](Cat& c1, Cat& c2) { return c1.getAge() < c2.getAge(); });
+	//cats.sort([](Cat& c1, Cat& c2) { return c1.getName() < c2.getName(); });
+	//print(cats);
+
+	//list<int> l = { 1,2,3,4,54,6 };
+	//cout << l.max_size() << endl;
+	//auto it = l.begin();
+	////advance(it, 3);
+	//l.insert(next(l.begin(), 3), 100);
+	//print(l);
+
+	//next(l.begin(), 3);
+
+
+	//MyStack s{ 1,2,3,4,5 };
+	//s.show();
+
+	//array<int, 5> arr = { 1,2,3,4,5 };	
+	//cout << arr.max_size() << endl;
+
+
+	//string password = "123456";
+	//string phash = md5(password);
+	//cout << "Password: " << password << endl;
+	//cout << "Hash: " << phash << endl;
+
+
+	//hash<string> h;
+	//auto hash2 = h(password);
+	//cout << "Hash2: " << hash2 << endl;
+
 	// 04.11.2026
 
-	vector<int> v = { 1,2,3,4,5,6 };
-	vector<int> v1 = { 12,23,34,45,56,67 };
-	print(v);
+	//vector<int> v = { 1,2,3,4,5,6 };
+	//vector<int> v1 = { 12,23,34,45,56,67 };
+	//print(v);
 
-	//v.insert(v.begin() + 3, 99);
-	//v.insert(v.begin() + 3, v1.begin()+2, v1.begin()+5);
-	v.insert(v.begin() + 3, {6,7,8,9,});
-	print(v);
+	////v.insert(v.begin() + 3, 99);
+	////v.insert(v.begin() + 3, v1.begin()+2, v1.begin()+5);
+	//v.insert(v.begin() + 3, {6,7,8,9,});
+	//print(v);
 
-	//vector<Cat> vc = { Cat("Tom", 3), Cat("Murka", 2) };
-	//vc.insert(vc.begin() + 1, Cat("Barsik", 4));
-	//vc.emplace(vc.begin() + 1, "Barsik", 4);
+	////vector<Cat> vc = { Cat("Tom", 3), Cat("Murka", 2) };
+	////vc.insert(vc.begin() + 1, Cat("Barsik", 4));
+	////vc.emplace(vc.begin() + 1, "Barsik", 4);
 
-	erase_if(v, [](int a) { return a % 2 == 0; });
-	print(v);
+	//erase_if(v, [](int a) { return a % 2 == 0; });
+	//print(v);
 
-	[]() {};
+	//[]() {};
 
-	auto f = [](const char* message) { cout << message << endl; };
-	f("mama");
+	//auto f = [](const char* message) { cout << message << endl; };
+	//f("mama");
 
-	auto ff = [](int a)->int {
-		if (a == 0)
-			return 10;
-		return 5.0;	};
+	//auto ff = [](int a)->int {
+	//	if (a == 0)
+	//		return 10;
+	//	return 5.0;	};
 
-	cout << ff(40) << endl;
+	//cout << ff(40) << endl;
 
 
-	int c = 10, m = 12;
-	auto fff = [=, &c]() { cout << ++c << m << endl; };
-	fff();
+	//int c = 10, m = 12;
+	//auto fff = [=, &c]() { cout << ++c << m << endl; };
+	//fff();
 
 	//cout << v.size() << endl;
 	//cout << v.capacity() << endl;

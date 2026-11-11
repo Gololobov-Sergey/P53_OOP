@@ -22,13 +22,15 @@ public:
 
 	virtual ~Animal() { /*cout << "Destr Animal" << endl;*/ }
 
-	string getName() { return name; } const 
+	string getName() const { return name; }
 
-	virtual string getType() { return "Animal"; } 
+	virtual string getType() { return "Animal"; }
 
 	virtual string getVoice() = 0;
 
 	int getAge() { return age; }
+
+	void setAge(int a) { age = a; }
 };
 
 string Animal::getVoice()
@@ -46,9 +48,9 @@ public:
 
 	~Cat() { /*cout << "Destr Cat" << endl;*/ }
 
-	virtual string getType()  override { return "Cat"; }
+	virtual string getType() override { return "Cat"; }
 
-	virtual string getVoice() const /*final*/ override { return "Mau Mau"; }
+	virtual string getVoice() /*final*/ override { return "Mau Mau"; }
 
 	virtual void print() override { cout << "Cat: " << getName() << endl; }
 
@@ -58,7 +60,7 @@ public:
 
 	friend ostream& operator<<(ostream& os, Cat& c)
 	{
-		os << "Cat: " << c.getName() << ", Age: " << c.getAge();
+		os << "Cat: " << c.getName() << ", Age: " << c.getAge() ;
 		return os;
 	}
 };

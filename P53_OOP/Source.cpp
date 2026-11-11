@@ -7,6 +7,7 @@
 #include<stack>
 #include<set>
 #include<map>
+#include<algorithm>
 
 #include"Student.h"
 #include"Array.h"
@@ -125,21 +126,97 @@ public:
 	}
 };
 
+class CalcOddEven
+{
+	int even = 0;
+	int odd = 0;
+
+public:
+	void operator()(int a)
+	{
+		if (a % 2 == 0)
+			even++;
+		else
+			odd++;
+	}
+	int getEven() { return even; }
+	int getOdd() { return odd; }
+};
+
 
 int main()
 {
+	cout.setf(ios::boolalpha);
 
+
+	// 11.11.2026
+
+	list<Cat> cats = { Cat("Tom", 3), Cat("Bob", 5), Cat("Alice", 2) };
+	/*for_each(cats.begin(), cats.end(), [](Cat& c) { c.setAge(c.getAge() + 1); });
+	print(cats);*/
+	replace_if(cats.begin(), cats.end(), [](Cat& c) { return c.getAge() > 3; }, Cat("Jerry", 1));
+	print(cats);
+
+	vector<int> v(10);
+	//int max = 9, min = 1;
+	generate(v.begin(), v.end(), [max = 9, min = 1]() { return rand() % (max - min + 1) + min; });
+	print(v);
+	
+
+
+	//int arr[] = { 1, 2,32,34,5,5,4, 2, 3, -4, 5 };
+	//for_each(arr, arr + sizeof(arr) / sizeof(int), [](int& a) { cout << a << " "; });
+	//copy(arr, arr + sizeof(arr) / sizeof(int), ostream_iterator<int>(std::cout, " "));
+
+	//int arr1[] = { 2, 3 };
+	//for_each(arr1, arr1 + sizeof(arr1) / sizeof(int), [](int& a) { a++; });
+	//copy(arr1, arr1 + sizeof(arr1) / sizeof(int), ostream_iterator<int>(std::cout, " "));
+
+	//CalcOddEven calc;
+	//calc = for_each(begin(arr), end(arr), calc);
+	//cout << "Even: " << calc.getEven() << ", Odd: " << calc.getOdd() << endl;
+
+	//calc.operator()(5);
+	//calc(5)
+
+	//cout << all_of(cats.begin(), cats.end(), [](Cat& c) { return c.getAge() > 1; }) << endl;
+	//cout << all_of(begin(arr), end(arr), [](int a) { return a > 0; }) << endl;
+	//cout << any_of(begin(arr), end(arr), [](int a) { return a > 0; }) << endl;
+
+	//auto it = find_if(cats.begin(), cats.end(), [](Cat& c) { return c.getName() == "Tom"; });
+	//if(it  != cats.end())
+	//	cout << (*it).getVoice() << endl;
+
+	//cout << count_if(begin(arr), end(arr), [](int a) { return a > 2; }) << endl;
+
+	//auto it = search(begin(arr), end(arr), begin(arr1), end(arr1));
+	//cout << (it != end(arr) ? *it : -1) << endl;
+	//cout << distance(begin(arr), it) << endl;
+	
 	// 09.11.2026
 
+	//map<string, int> m;
+	//m["one"] ++;
 
-	map<string, Cat, FromCatName> cats;
-	cats.insert(make_pair("Tom", Cat("Tom", 3)));
-	cats.insert(make_pair("Bob", Cat("Tom", 3)));
-	cats.insert(make_pair("Alice", Cat("Tom", 3)));
-	for (auto elem : cats)
-	{
-		cout << elem.first << endl;
-	}
+	//cout << m["two"] << endl;
+
+	//for (auto elem : m)
+	//{
+	//	cout << elem.first << " " << elem.second << endl;
+	//}
+
+	//auto f = m.find("one");
+	//cout << f->first << " " << f->second << endl;
+
+
+	//map<string, Cat, FromCatName> cats;
+	//cats.insert(make_pair("Tom", Cat("Tom", 3)));
+	//cats.insert(make_pair("Bob", Cat("Bob", 3)));
+	//cats.insert(make_pair("Alice", Cat("Alice", 3)));
+	//for (auto elem : cats)
+	//{
+	//	cout << elem.first << endl;
+	//}
 
 
 
